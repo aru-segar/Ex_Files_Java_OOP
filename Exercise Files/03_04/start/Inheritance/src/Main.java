@@ -1,7 +1,6 @@
 import java.util.Stack;
 
 public class Main {
-
     public static void main(String[] args) {
 
         Stack<Character> charStack = new Stack<>();
