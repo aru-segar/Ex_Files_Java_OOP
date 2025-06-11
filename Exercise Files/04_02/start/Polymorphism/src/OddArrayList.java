@@ -37,7 +37,7 @@ public class OddArrayList extends ArrayList<Integer> {
 
     @Override
     public boolean addAll(int index,
-                          Collection<? extends Integer> c) {
+            Collection<? extends Integer> c) {
         return super.addAll(index, c.stream()
                 .filter(OddArrayList::isOdd)
                 .collect(Collectors.toList()));
@@ -45,7 +45,7 @@ public class OddArrayList extends ArrayList<Integer> {
 
     @Override
     public Integer set(int index,
-                       Integer element) {
+            Integer element) {
         if (isOdd(element)) {
             return super.set(index, element);
         } else {
@@ -53,7 +53,6 @@ public class OddArrayList extends ArrayList<Integer> {
             return Integer.MIN_VALUE;
         }
     }
-
 
     @Override
     public void replaceAll(UnaryOperator<Integer> operator) {
@@ -64,5 +63,4 @@ public class OddArrayList extends ArrayList<Integer> {
     public static boolean isOdd(Integer element) {
         return Math.abs(element) % 2 == 1;
     }
-
 }
